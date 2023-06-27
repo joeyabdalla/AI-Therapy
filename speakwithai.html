@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mental Health Awareness App</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
+        * {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+        
+        .chat-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+        }
+        
+        #response {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            resize: none;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            overflow-y: auto;
+        }
+        
+        form {
+            display: flex;
+        }
+        
+        input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-left: 10px;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: black;
+            color: white;
+        }
+        
+
+        
+    </style>
+
+</head>
+
+<body>
+    <div class="chat-container">
+        <h1>Welcome to AI Therapy</h1>
+        <textarea id="response" rows="20" readonly></textarea>
+        <form id="chat-form">
+            <input type="text" id="mytext" placeholder="Enter your message" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById('chat-form');
+        const mytextInput = document.getElementById('mytext');
+        const responseTextarea = document.getElementById('response');
+
+        const API_KEY = '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';
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const mytext = mytextInput.value.trim();
+
+            if (mytext) {
+                try {
+                    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${API_KEY}`,
+                        },
+                        body: JSON.stringify({
+                            model: 'gpt-3.5-turbo',
+                            messages: [{ role: 'user', content: mytext }],
+                            temperature: 1.0,
+                            top_p: 0.7,
+                            n: 1,
+                            stream: false,
+                            presence_penalty: 0,
+                            frequency_penalty: 0,
+                        }),
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        responseTextarea.value = data.choices[0].message.content;
+                    } else {
+                        responseTextarea.value = 'Error: Unable to process your request.';
+                    }
+                } catch (error) {
+                    console.error(error);
+                    responseTextarea.value = 'Error: Unable to process your request.';
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+        <title>Tips</title>
+        <style>
+           
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
+        *{
+            font-family: 'Nunito', sans-serif;
+        }
+              
+          /* Styling for the boxes */
+          .box {
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+          }
+          /* Styling for the plus sign buttons */
+          .plus-sign {
+            float: right;
+            cursor: pointer;
+          }
+          /* Styling for the text inside the boxes */
+          .box-content {
+            margin-top: 5px;
+            display: none;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Tips</h1>
+        <div class="box">
+          <h3>Steps to self diagnose if you have depression</h3>
+          <span class="plus-sign">+</span>
+          <div class="box-content">
+            <p>These are some common signs of depression:</p>
+            <p>1. Persistent feelings of sadness or emptiness</p>
+            <p>2. Loss of interest in activities that were once enjoyable</p>
+            <p>3. Changes in appetite and weight</p>
+            <p>4. Insomnia or oversleeping</p>
+            <p>5. Fatigue or loss of energy</p>
+            <p>6. Feelings of worthlessness or excessive guilt</p>
+            <p>7. Difficulty concentrating or making decisions</p>
+            <p>8. Recurrent thoughts of death or suicide</p>
+            <p>If you experience any of these symptoms, it is important to seek help from a mental health professional.</p>
+          </div>
+        </div>
+        <div class="box">
+          <h3>Types of depression and recovery</h3>
+          <span class="plus-sign">+</span>
+          <div class="box-content">
+            <p>1. Major depressive disorder: psychotherapy, antidepressant medications, lifestyle changes, electroconvulsive therapy (ECT), and transcranial magnetic stimulation (TMS)</p>
+            <p>2. Persistent depressive disorder: psychotherapy, antidepressant medications, cognitive behavioral therapy (CBT), and interpersonal therapy (IPT)</p>
+            <p>3. Seasonal affective disorder: light therapy, psychotherapy, and medications</p>
+            <p>4. Postpartum depression: psychotherapy, antidepressant medications, support groups, and lifestyle changes</p>
+            <p>5. Bipolar disorder: medications, psychotherapy, electroconvulsive therapy (ECT), and transcranial magnetic stimulation (TMS)</p>
+          </div>
+        </div>
+        <div class="box">
+          <h3>Benefits of treating depression</h3>
+          <span class="plus-sign">+</span>
+          <div class="box-content">
+            <p>1. Improves your mood</p>
+            <p>2. Increases your energy</p>
+            <p>3. Improves sleep</p>
+            <p>4. Better physical health</p>
+            <p>5. Improves relationships</p>
+            <p>6. Reduced risk of suicide</p>
+          </div>
+        </div>
+        <div class="box">
+          <h3>Why choose us to help</h3>
+          <span class="plus-sign">+</span>
+          <div class="box-content">
+            <p>1. Experience: Our team has years of experience in providing mental health support, specifically for individuals with depression.</p>
+            <p>2. Compassionate Care: We believe in providing a safe and non-judgmental space for our clients to express their emotions and receive the support they need.</p>
+            <p>3. Evidence-Based Approaches: Our treatment approaches are based on the latest scientific research and evidence-based practices to ensure our clients receive the most effective care possible.</p>
+            <p>4. Collaborative Care: We believe in working closely with our clients to ensure they are fully engaged in their care and that their treatment plan reflects their individual needs and goals.</p>
+            <p>5. Ongoing Support: We offer ongoing support to our clients even after they have completed their treatment to ensure they have the tools and resources they need to maintain their mental health.</p>
+          </div>
+        </div>
+        <script>
+          // Add click event listener to each plus sign button
+          const plusSigns = document.querySelectorAll('.plus-sign');
+          plusSigns.forEach(plusSign => {
+            plusSign.addEventListener('click', () => {
+              // Toggle the display of the box content
+              const boxContent = plusSign.nextElementSibling;
+              boxContent.style.display === 'none' ? boxContent.style.display = 'block' : boxContent.style.display = 'none';
+              // Change the plus sign to a minus sign or vice versa
+              plusSign.textContent === '+' ? plusSign.textContent = '-' : plusSign.textContent = '+';
+            });
+          });
+        </script>
+</html>
