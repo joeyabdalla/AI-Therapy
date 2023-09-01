@@ -1,0 +1,45 @@
+html{
+    font-family: "Helvetica Neue";
+    overflow: hidden;
+}
+
+nav {
+    list-style-type: none;
+    background-color: #808080;
+    width: 325px;
+    height: 870px;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin: 70px 30px;
+}
+
+nav li{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 14px;
+    height: 74px;
+    width: 257px;
+    margin: 10% 10%;
+    
+}
+
+nav div.links{
+    background-color: green;
+    border-radius: 20px; 
+}
+
+nav  li a {
+    text-decoration: none;  
+    color: inherit;        
+    font-weight: 500;   
+}
+
+nav div li div.date{
+    
+
+
+}
+  
