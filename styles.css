@@ -5,20 +5,20 @@ html{
 
 nav {
     list-style-type: none;
-    background-color: #808080;
+    background-color: #f0f0f0;
+    border: 3px solid #e6e6e6;
     width: 325px;
-    height: 870px;
+    height: 900px;
     border-radius: 20px;
-    border: 2px solid black;
     margin: 70px 30px;
 }
 
-nav li{
+nav li.nav_btn{
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 3px solid black;
+    border: 3px solid #717171;
     border-radius: 14px;
     height: 74px;
     width: 257px;
@@ -27,8 +27,9 @@ nav li{
 }
 
 nav div.links{
-    background-color: green;
+    background-color: white;
     border-radius: 20px; 
+    padding: 10px 0px 10px;
 }
 
 nav  li a {
@@ -37,9 +38,61 @@ nav  li a {
     font-weight: 500;   
 }
 
-nav div li div.date{
-    
+nav div.date{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8% 10%;
+    height: 150px;
+}
 
+nav ol{
+  list-style-type:none;
+  display: flex;
+  flex-direction: row;
+}
 
+nav ol li.date_num{
+  font-size: 120px;
+  font-weight: 600;
+  margin-left: -25px;
+  
+}
+
+nav ol li.date_day{
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 85px;
+}
+
+.nav_ai_btn_link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block; 
+  margin: 0px 30px;
+}
+
+div.nav_ai_btn{
+  background-color: white;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    
+  align-items: center;    
+  border: 3px solid #717171;
+  border-radius: 14px;
+  margin: 10% auto 10%;
+  height: 150px;
+  width: 257px;
+}
+
+div.nav_ai_logo{
+  color: inherit;
+  font-size: 2em;
+}
+
+div.nav_ai_txt {
+  margin-top: 20px;
+  font-weight: 500;
 }
   
