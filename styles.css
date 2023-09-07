@@ -4,24 +4,25 @@ html{
 }
 
 nav {
+    position: fixed;
     list-style-type: none;
     background-color: #f0f0f0;
-    border: 3px solid #e6e6e6;
-    width: 325px;
-    height: 900px;
-    border-radius: 20px;
-    margin: 70px 30px;
+    border: 3px solid black; /*#e6e6e6*/
+    width: 30vh;
+    height: 83vh;
+    border-radius: 25px;
+    transform: translate(10%,10%);
 }
 
 nav li.nav_btn{
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 3px solid #717171;
+    border: 4px solid #717171;
     border-radius: 14px;
-    height: 74px;
-    width: 257px;
+    height: 6vh;
+    width: auto;
     margin: 10% 10%;
     
 }
@@ -29,13 +30,14 @@ nav li.nav_btn{
 nav div.links{
     background-color: white;
     border-radius: 20px; 
-    padding: 10px 0px 10px;
+    padding: 1vh 0vh 10vh;
 }
 
 nav  li a {
     text-decoration: none;  
     color: inherit;        
-    font-weight: 500;   
+    font-weight: 500; 
+    font-size: 1.5vh;  
 }
 
 nav div.date{
@@ -43,7 +45,7 @@ nav div.date{
     justify-content: center;
     align-items: center;
     margin: 8% 10%;
-    height: 150px;
+    height: 12vh;
 }
 
 nav ol{
@@ -53,23 +55,26 @@ nav ol{
 }
 
 nav ol li.date_num{
-  font-size: 120px;
+  font-size: 160px;
   font-weight: 600;
   margin-left: -25px;
   
 }
 
 nav ol li.date_day{
-  font-size: 30px;
+  font-size: 45px;
   font-weight: 600;
-  margin-top: 85px;
+  margin-top: 110px;
 }
 
 .nav_ai_btn_link {
   text-decoration: none;
-  color: inherit;
-  display: inline-block; 
-  margin: 0px 30px;
+  background-color: aqua;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  height: 15vh;
 }
 
 div.nav_ai_btn{
@@ -81,18 +86,18 @@ div.nav_ai_btn{
   align-items: center;    
   border: 3px solid #717171;
   border-radius: 14px;
-  margin: 10% auto 10%;
-  height: 150px;
-  width: 257px;
+  height: 12vh;
+  width: 26vh;
 }
 
 div.nav_ai_logo{
   color: inherit;
-  font-size: 2em;
+  font-size: 4em;
 }
 
 div.nav_ai_txt {
   margin-top: 20px;
   font-weight: 500;
+  font-size: 1.2vh;  
 }
   
